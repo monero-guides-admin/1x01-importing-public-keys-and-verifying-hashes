@@ -33,7 +33,7 @@ Let's start by opening up a terminal window and checking which version of gpg we
 Don't worry that i'm using ubuntu, this is relevant to all OS's, if you're a windows user, please open a powershell window.
 Do take a look at the video description as most of the commands we’re going to use can be found there. Feel free to copy and paste along with this video.
 
-Let's start by typing 'gpg --version' and pressing enter. If you're not familiar with using the command line, please remember, you need to hit enter each time for the terminal to read your input. 
+Let's start by typing ''gpg --version'' and pressing enter. If you're not familiar with using the command line, please remember, you need to hit enter each time for the terminal to read your input. 
 
 If you weren't sure if you had it installed, this is a pretty good test. This command will print some interesting information, including the version, the licence, the home directory for gpg and the supported algorithms
 
