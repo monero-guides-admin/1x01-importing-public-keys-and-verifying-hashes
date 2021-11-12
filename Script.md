@@ -40,7 +40,7 @@ If you weren't sure if you had it installed, this is a pretty good test. This co
 Now we've confirmed that it's installed, we're going to create our very own set of keys.
 
 keys typically come in pairs, a private key and a public key. In simple terms, a private key is one which you use to prove who you are and a public key is one which is used to tell other people who you are. 
-It's a pretty simple system, but has deep roots in cryptography. if you're interested in reading a little more about the fundamentals, check out the link entitled [How PGP Works] (https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html)
+It's a pretty simple system, but has deep roots in cryptography. if you're interested in reading a little more about the fundamentals, check out the link entitled [How PGP Works](https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html)
 
 to generate our own set of keys we're going to use the command `gpg --full-generate-key`, don't forget to include the hyphens 
 
