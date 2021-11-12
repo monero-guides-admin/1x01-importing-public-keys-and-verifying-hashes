@@ -1,8 +1,8 @@
 ### Prerequisites:
 
--gpg2 (Linux)
--kelopata/gpg4win (windows) - https://www.gpg4win.org/
--gnupg (Mac OS) - https://gpgtools.org/
+* gpg2 (Linux)
+* kelopata/gpg4win (windows) - https://www.gpg4win.org/
+* gnupg (Mac OS) - https://gpgtools.org/
 
 .....................................................
 
