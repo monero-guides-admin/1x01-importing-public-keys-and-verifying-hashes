@@ -1,4 +1,4 @@
-###Prerequisites:
+### Prerequisites:
 
 -gpg2 (Linux)
 -kelopata/gpg4win (windows) - https://www.gpg4win.org/
@@ -6,7 +6,7 @@
 
 .....................................................
 
-###INTRO
+### INTRO
 
 Hello there travellers
 
@@ -27,7 +27,7 @@ Please be aware that most linux distros will have GPG installed already. If you 
 
 .....................................................
 
-###CREATING YOUR OWN KEYS
+### CREATING YOUR OWN KEYS
 
 Let's start by opening up a terminal window and checking which version of gpg we have installed.
 Don't worry that i'm using ubuntu, this is relevant to all OS's, if you're a windows user, please open a powershell window.
@@ -63,7 +63,7 @@ you can have
 
 .....................................................
 
-###VERIFYING & IMPORTING SOMEONE ELSE'S PUBLIC KEY
+### VERIFYING & IMPORTING SOMEONE ELSE'S PUBLIC KEY
 
 To demonstrate we're going to head over to getmonero.org.
 Click on the downloads tab and scroll down until you see the different files. At this point, download the file that suits you best, for me it's the linux version, if you’re using windows, grab the Installer version.
@@ -105,7 +105,7 @@ Once again we can use 'gpg --list-keys' to verify that it has been added to our 
 
 .....................................................
 
-###SIGNING SOMEONE ELSE'S PUBLIC KEY
+### SIGNING SOMEONE ELSE'S PUBLIC KEY
 
 This step is a little unnecessary and is more relevant to public keyrings and the pgp ecosystem as a whole, namely the 'web of trust', which is totally outside the scope of this video, but you can learn more about the web of trust through the p2p foundation - https://wiki.p2pfoundation.net/Web_of_Trust
 For us, going through this step means that you have a more simple log when you verify signatures in the future.
@@ -121,7 +121,7 @@ Now use 'ctrl+c' to exit gpg
 
 .....................................................
 
-###VERIFYING SIGNATURES & HASHES
+### VERIFYING SIGNATURES & HASHES
 
 Everything we've done so far has now given us the ability to verify the signature on the hash file we downloaded earlier.
 
@@ -143,7 +143,7 @@ Now we know, the software that we have is the one intended by the person who sig
 
 .....................................................
 
-###OUTRO
+### OUTRO
 
 PGP relies heavily on trust, it's for that reason you should be sure that the public key you have in your keyring is in fact trustworthy.
 
