@@ -59,8 +59,6 @@ Now that we have generated our very own keypair, we can use the command `gpg --l
 What we have done simultaneously is added our keys to our very own keyring. 
 key rings are a little outside the scope of this video, however it's important to know that they may be different and you can have as many as you like. as we won't be specifying, we're going to be working with a default keyring
 
-you can have
-
 .....................................................
 
 ### VERIFYING & IMPORTING SOMEONE ELSE'S PUBLIC KEY
