@@ -16,8 +16,9 @@ Often you will hear the word safe used in terms of running a program. Please be 
 With that out of the way, let's get on to the matter at hand; The GNU Privacy Guard (GPG).
 
 GPG is a complete and free implementation of the OpenPGP standard that has been in circulation since 1997. 
-What makes GPG Free Software is that it can be freely used, modified and distributed. I recommend taking a look at the GNU project and the Free Software Foundation. Their webpage, is pretty interesting and you'll find a lot more Free Software there - [GNU Project](https://www.gnu.org/gnu/gnu.html)
-You can also learn more about the OpenPGP standard on their wiki page [PGP Wiki]( https://en.wikipedia.org/wiki/Pretty_Good_Privacy)
+What makes GPG Free Software is that it can be freely used, modified and distributed. I recommend taking a look at the GNU project and the Free Software Foundation. Their webpage, is pretty interesting and you'll find a lot more Free Software there - [GNU Project](https://www.gnu.org/gnu/gnu.html).
+
+You can also learn more about the OpenPGP standard on their wiki page [PGP Wiki]( https://en.wikipedia.org/wiki/Pretty_Good_Privacy).
 
 GPG allows anyone to encrypt and sign their data and communications. You will typically be prompted to carry out some basic operations when handling monero related software so we thought it would be good to have an easy to follow guide.
 
@@ -40,13 +41,14 @@ If you weren't sure if you had it installed, this is a pretty good test. This co
 Now we've confirmed that it's installed, we're going to create our very own set of keys.
 
 keys typically come in pairs, a private key and a public key. In simple terms, a private key is one which you use to prove who you are and a public key is one which is used to tell other people who you are. 
-It's a pretty simple system, but has deep roots in cryptography. if you're interested in reading a little more about the fundamentals, check out the link entitled [How PGP Works] (https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html)
+It's a pretty simple system, but has deep roots in cryptography. If you're interested in reading a little more about the fundamentals, check out the link entitled [How PGP Works](https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html).
 
-to generate our own set of keys we're going to use the command `gpg --full-generate-key`, don't forget to include the hyphens 
+To generate our own set of keys we're going to use the command `gpg --full-generate-key`, don't forget to include the hyphens 
 
 First it will ask you what kind of key you would like to create, for the purpose of this video we'll be using the default option 'RSA', so we'll select option 1.
-next it will ask you about the level of encryption you require, the larger the number the more data is used to generate the keys. more data generally means more secure. we're going to choose 4096 bit because... why not
-we will then be asked how long we want our keys to remain valid, this is a personal choice, because there is no limit to the number of keys one can generate and the fact i will not be hosting my keys publically, i'm going to choose 0, 'never expires'
+next it will ask you about the level of encryption you require, the larger the number the more data is used to generate the keys. More data generally means more secure. We're going to choose 4096 bit because... why not?
+
+We will then be asked how long we want our keys to remain valid, this is a personal choice, because there is no limit to the number of keys one can generate and the fact i will not be hosting my keys publically, i'm going to choose 0, 'never expires'
 
 yes, i'm sure
 
@@ -96,24 +98,25 @@ you will often find that a fingerprint will be hosted somewhere on the internet 
 
 Please bear in mind, if a webpage or repo has been compromised and the fingerprint and the public key are located in the same place, the likelihood is that both were compromised, so checking the fingerprint is pretty much pointless. However, if the fingerprint and key are hosted in seperate locations, it's always worth checking.
 
-In our case, we can find the fingerprint for binaryfates public key on the get monero web page. [Get Monero](https://www.getmonero.org/resources/user-guides/verification-allos-advanced.html)
+In our case, we can find the fingerprint for binaryfates public key on the [Get Monero](https://www.getmonero.org/resources/user-guides/verification-allos-advanced.html).
 
 Click on the heading 'Verify and Import Signing Key', scroll down until you find this section 'Verify the fingerprint matches'. Now let's visually compare that to the one which is printed in our terminal window.
 If you've got a match, great, if not, verify the web links you used and report your findings to the community.
 
-Now that we have a little more confidence in the key we've downloaded we're going to use the command `gpg --import binaryfate.asc`
-Once again we can use `gpg --list-keys` to verify that it has been added to our keyring
+Now that we have a little more confidence in the key we've downloaded we're going to use the command `gpg --import binaryfate.asc`.
+Once again we can use `gpg --list-keys` to verify that it has been added to our keyring.
 
 .....................................................
 
 ### SIGNING SOMEONE ELSE'S PUBLIC KEY
 
-This step is a little unnecessary and is more relevant to public keyrings and the pgp ecosystem as a whole, namely the 'web of trust', which is totally outside the scope of this video, but you can learn more about the web of trust through the p2p foundation - [web of trust](https://wiki.p2pfoundation.net/Web_of_Trust)
+This step is a little unnecessary and is more relevant to public keyrings and the pgp ecosystem as a whole, namely the 'web of trust', which is totally outside the scope of this video, but you can learn more about the web of trust through the p2p foundation - [web of trust](https://wiki.p2pfoundation.net/Web_of_Trust).
 For us, going through this step means that you have a more simple log when you verify signatures in the future.
 
 It is possible to add this level of trust to the signature you have imported with the `--edit-key` flag. 
 In our case we will use the command `gpg --edit-key binaryfate@getmonero.org`
 Once GPG is running you will see 'gpg>', you now have a few options including the ability to sign it with your own key, type ‘help’ to find out what else you can do.
+
 For now, let’s type 'sign', confirm with 'y' and now enter the password you set up in the previous step.
 
 All done
@@ -128,17 +131,17 @@ Everything we've done so far has now given us the ability to verify the signatur
 
 The next command we're going to use is `gpg --verify hashes.txt`, if you're typing this out yourself, remember that you can use `TAB` to autocomplete.
 
-If everything has gone to plan, we should see a message stating 'Good signature from "binaryFate <binaryfate@getmonero.org>"'
+If everything has gone to plan, we should see a message stating 'Good signature from "binaryFate <binaryfate@getmonero.org>"'.
 
-If you don't receive this message, please follow the procedure recommended upon failed fingerprint verification
+If you don't receive this message, please follow the procedure recommended upon failed fingerprint verification.
 
 GREAT!
 
 Now we can compare the hashes in the text file to those of the file we downloaded.
 
-If you're using linux you can use the command `sha256sum --check hashes.txt`, we're going to look for the version we downloaded and check to see if everything is 'OK'
+If you're using linux you can use the command `sha256sum --check hashes.txt`, we're going to look for the version we downloaded and check to see if everything is 'OK'.
 
-If you're using windows, please use the command `Get-Filehash` and then the name of the file you downloaded. Manually compare this hash to the one in the hashes.txt file
+If you're using windows, please use the command `Get-Filehash` and then the name of the file you downloaded. Manually compare this hash to the one in the hashes.txt file.
 
 Now we know, the software that we have is the one intended by the person who signed these hashes!
 
