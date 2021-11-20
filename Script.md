@@ -1,14 +1,13 @@
 ### Prerequisites:
 
 * gpg2 (Linux)
-* kelopata/gpg4win (windows) - https://www.gpg4win.org/
-* gnupg (Mac OS) - https://gpgtools.org/
+* Kelopata (Windows) - [GPG4WIN](https://www.gpg4win.org)
 
 .....................................................
 
 ### INTRO
 
-Hello there travellers
+Hello there travelers and welcome to the first in the series "Getting to grips with Monero".
 
 If you are watching this video, it's most likely that you are interested in knowing whether or not you’re running the software intended by their authors.
 
@@ -17,12 +16,13 @@ Often you will hear the word safe used in terms of running a program. Please be 
 With that out of the way, let's get on to the matter at hand; The GNU Privacy Guard (GPG).
 
 GPG is a complete and free implementation of the OpenPGP standard that has been in circulation since 1997. 
-What makes GPG Free Software is that it can be freely used, modified and distributed. I recommend taking a look at the GNU project and the Free Software Foundation. Their webpage, is pretty interesting and you'll find a lot more Free Software there - https://www.gnu.org/gnu/gnu.html
-You can also learn more about the OpenPGP standard on the following wiki page - https://en.wikipedia.org/wiki/Pretty_Good_Privacy
+What makes GPG Free Software is that it can be freely used, modified and distributed. I recommend taking a look at the GNU project and the Free Software Foundation. Their webpage, is pretty interesting and you'll find a lot more Free Software there - [GNU Project](https://www.gnu.org/gnu/gnu.html)
+You can also learn more about the OpenPGP standard on their wiki page [PGP Wiki]( https://en.wikipedia.org/wiki/Pretty_Good_Privacy)
 
 GPG allows anyone to encrypt and sign their data and communications. You will typically be prompted to carry out some basic operations when handling monero related software so we thought it would be good to have an easy to follow guide.
 
-If you haven't installed the software for your operating system already, please go ahead and do so. You'll find appropriate links in the description below.
+If you haven't installed the software for your operating system already, please go ahead and do so now. As with all our videos, you'll find all the required links in the description.
+
 Please be aware that most linux distros will have GPG installed already. If you find that you don't have it, please check your package manager and install it from there.
 
 .....................................................
@@ -40,7 +40,7 @@ If you weren't sure if you had it installed, this is a pretty good test. This co
 Now we've confirmed that it's installed, we're going to create our very own set of keys.
 
 keys typically come in pairs, a private key and a public key. In simple terms, a private key is one which you use to prove who you are and a public key is one which is used to tell other people who you are. 
-It's a pretty simple system, but has deep roots in cryptography. if you're interested in reading a little more about the fundamentals, check out the link entitled [How PGP Works](https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html)
+It's a pretty simple system, but has deep roots in cryptography. if you're interested in reading a little more about the fundamentals, check out the link entitled [How PGP Works] (https://users.ece.cmu.edu/~adrian/630-f04/PGP-intro.html)
 
 to generate our own set of keys we're going to use the command `gpg --full-generate-key`, don't forget to include the hyphens 
 
@@ -64,15 +64,18 @@ key rings are a little outside the scope of this video, however it's important t
 ### VERIFYING & IMPORTING SOMEONE ELSE'S PUBLIC KEY
 
 To demonstrate we're going to head over to getmonero.org.
-Click on the downloads tab and scroll down until you see the different files. At this point, download the file that suits you best, for me it's the linux version, if you’re using windows, grab the Installer version.
-Now that it's downloaded we’ll need two bits of information. 
 
-The first is located in the 'hashes.txt'. Hashes are unique identifiers that are generated from using a hashing algorithm. These algorithms use information about the file and because of that we can detect changes easily and quickly.
+Click on the downloads tab and then select "Monero CLI wallet". Next, download the file that suits you best, for me it's the 64-bit linux version.
+Now that it's downloaded we’ll need two more bits of information. 
+
+Scroll down  the the "verify" subheading and click on the "Show hashes to verify your download" drop down menu.
+
+The first is located in the "hashes.txt". I'm going to right click and "save link as". Let's take a look at what we've got here.
+
+Hashes are unique identifiers that are generated from using a hashing algorithm. These algorithms use information about the file and because of that we can detect changes easily and quickly.
 We're interested in making sure that the hash of the file we have downloaded matches the hash contained in this file.
 
-I'm going to right click and 'save link as'. Let's take a look at what we've got here.
-
-You guessed it, this text file contains the hashes for each release, but if you look at the heading and footer, you will notice that this actually comes in the form of a signed message.
+If you look at the heading and footer, you will notice that this file actually comes in the form of a signed message.
 This is important, because now we can see if these hashes were signed by someone we know.
 
 The next piece of information we need is the public key for the person who supposedly signed these hashes. Which we can find via the getmonero site.
@@ -93,7 +96,7 @@ you will often find that a fingerprint will be hosted somewhere on the internet 
 
 Please bear in mind, if a webpage or repo has been compromised and the fingerprint and the public key are located in the same place, the likelihood is that both were compromised, so checking the fingerprint is pretty much pointless. However, if the fingerprint and key are hosted in seperate locations, it's always worth checking.
 
-In our case, we can find the fingerprint for binaryfates public key on the get monero web page. you can either click on this link here, or use the wwebpage we have provided below - https://www.getmonero.org/resources/user-guides/verification-allos-advanced.html
+In our case, we can find the fingerprint for binaryfates public key on the get monero web page. [Get Monero](https://www.getmonero.org/resources/user-guides/verification-allos-advanced.html)
 
 Click on the heading 'Verify and Import Signing Key', scroll down until you find this section 'Verify the fingerprint matches'. Now let's visually compare that to the one which is printed in our terminal window.
 If you've got a match, great, if not, verify the web links you used and report your findings to the community.
@@ -105,7 +108,7 @@ Once again we can use `gpg --list-keys` to verify that it has been added to our 
 
 ### SIGNING SOMEONE ELSE'S PUBLIC KEY
 
-This step is a little unnecessary and is more relevant to public keyrings and the pgp ecosystem as a whole, namely the 'web of trust', which is totally outside the scope of this video, but you can learn more about the web of trust through the p2p foundation - https://wiki.p2pfoundation.net/Web_of_Trust
+This step is a little unnecessary and is more relevant to public keyrings and the pgp ecosystem as a whole, namely the 'web of trust', which is totally outside the scope of this video, but you can learn more about the web of trust through the p2p foundation - [web of trust](https://wiki.p2pfoundation.net/Web_of_Trust)
 For us, going through this step means that you have a more simple log when you verify signatures in the future.
 
 It is possible to add this level of trust to the signature you have imported with the `--edit-key` flag. 
@@ -115,7 +118,7 @@ For now, let’s type 'sign', confirm with 'y' and now enter the password you se
 
 All done
 
-Now use 'ctrl+c' to exit gpg
+Now use `ctrl+c` to exit gpg
 
 .....................................................
 
@@ -123,7 +126,7 @@ Now use 'ctrl+c' to exit gpg
 
 Everything we've done so far has now given us the ability to verify the signature on the hash file we downloaded earlier.
 
-The next command we're going to use is `gpg --verify hashes.txt`, if you're typing this out yourself, remember that you can use 'tab' to autocomplete.
+The next command we're going to use is `gpg --verify hashes.txt`, if you're typing this out yourself, remember that you can use `TAB` to autocomplete.
 
 If everything has gone to plan, we should see a message stating 'Good signature from "binaryFate <binaryfate@getmonero.org>"'
 
