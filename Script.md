@@ -65,26 +65,26 @@ key rings are a little outside the scope of this video, however it's important t
 
 ### VERIFYING & IMPORTING SOMEONE ELSE'S PUBLIC KEY
 
-To demonstrate we're going to head over to getmonero.org.
+To demonstrate we're going to head over to the official [github repository](https://github.com/monero-project/monero) for monero.
 
-Click on the downloads tab and then select "Monero CLI wallet". Next, download the file that suits you best, for me it's the 64-bit linux version.
+Click on the "Releases" link on the right hand side. The latest release will be at the top of the page. Scroll down to "Official Download Links" and download the file that suits you best, for me it's the 64-bit linux version.
 Now that it's downloaded we’ll need two more bits of information. 
 
-Scroll down  the the "verify" subheading and click on the "Show hashes to verify your download" drop down menu.
+The first is located in the "hashes.txt" which you will find via a link below. I'm going to right click and "save link as". 
 
-The first is located in the "hashes.txt". I'm going to right click and "save link as". Let's take a look at what we've got here.
+Let's take a look at what we've got here.
 
 Hashes are unique identifiers that are generated from using a hashing algorithm. These algorithms use information about the file and because of that we can detect changes easily and quickly.
 We're interested in making sure that the hash of the file we have downloaded matches the hash contained in this file.
 
 If you look at the heading and footer, you will notice that this file actually comes in the form of a signed message.
 This is important, because now we can see if these hashes were signed by someone we know.
+If we take a look just above the signature we can see that the person who signed it was a contributor by the name 'binaryfate'.
 
-The next piece of information we need is the public key for the person who supposedly signed these hashes. Which we can find via the getmonero site.
+The next piece of information we need is binaryfate's public key.
 
-Let's take a look at the git source as recommended. Here we find the public key of 'binaryfate' one of the key contributors to the monero ecosystem. Feel free to check out his git profile and see what he's been working on.
-
-Most keys will be suffixed with '.asc'. To download this key, right click on the link titled 'raw' and 'save link as'
+We can find it in the github repository we started in earlier. Click on the folder labelled "utils", then "gpg_keys". Here we will find a list of all the contributors public keys.
+Right click on binaryfates name and select "save link as".
 
 Next, open your file explorer and navigate to the directory in which you save these files. If you haven't saved them to the same place, please move them now.
 
