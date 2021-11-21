@@ -83,7 +83,7 @@ If we take a look just above the signature we can see that the person who signed
 
 The next piece of information we need is binaryfate's public key.
 
-We can find it in the github repository we started in earlier. Click on the folder labelled "utils", then "gpg_keys". Here we will find a list of all the contributors public keys.
+We can find it via the github page we started on. Click on the folder labelled "utils", then "gpg_keys". Here we will find a list of all the contributors public keys.
 Right click on binaryfates name and select "save link as".
 
 Next, open your file explorer and navigate to the directory in which you save these files. If you haven't saved them to the same place, please move them now.
