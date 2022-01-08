@@ -3,7 +3,6 @@
 * gpg2 (Linux)
 * Kelopata (Windows) - [GPG4WIN](https://www.gpg4win.org)
 
-.....................................................
 
 ### INTRO
 
@@ -26,7 +25,6 @@ If you haven't installed the software for your operating system already, please 
 
 Please be aware that most linux distros will have GPG installed already. If you find that you don't have it, please check your package manager and install it from there.
 
-.....................................................
 
 ### CREATING YOUR OWN KEYS
 
@@ -48,7 +46,7 @@ To generate our own set of keys we're going to use the command `gpg --full-gener
 First it will ask you what kind of key you would like to create, for the purpose of this video we'll be using the default option 'RSA', so we'll select option 1.
 next it will ask you about the level of encryption you require, the larger the number the more data is used to generate the keys. More data generally means more secure. We're going to choose 4096 bit because... why not?
 
-We will then be asked how long we want our keys to remain valid, this is a personal choice, because there is no limit to the number of keys one can generate and the fact i will not be hosting my keys publically, i'm going to choose 0, 'never expires'
+We will then be asked how long we want our keys to remain valid, this is a personal choice, because there is no limit to the number of keys one can generate and the fact i will not be hosting my keys publically, i'm going to choose 0, 'never expires'.
 
 yes, i'm sure
 
@@ -61,7 +59,6 @@ Now that we have generated our very own keypair, we can use the command `gpg --l
 What we have done simultaneously is added our keys to our very own keyring. 
 key rings are a little outside the scope of this video, however it's important to know that they may be different and you can have as many as you like. as we won't be specifying, we're going to be working with a default keyring
 
-.....................................................
 
 ### VERIFYING & IMPORTING SOMEONE ELSE'S PUBLIC KEY
 
@@ -106,7 +103,6 @@ If you've got a match, great, if not, verify the web links you used and report y
 Now that we have a little more confidence in the key we've downloaded we're going to use the command `gpg --import binaryfate.asc`.
 Once again we can use `gpg --list-keys` to verify that it has been added to our keyring.
 
-.....................................................
 
 ### SIGNING SOMEONE ELSE'S PUBLIC KEY
 
@@ -121,15 +117,14 @@ For now, let’s type 'sign', confirm with 'y' and now enter the password you se
 
 All done
 
-Now use `ctrl+c` to exit gpg
+Now use 'ctrl+c' to exit gpg
 
-.....................................................
 
 ### VERIFYING SIGNATURES & HASHES
 
 Everything we've done so far has now given us the ability to verify the signature on the hash file we downloaded earlier.
 
-The next command we're going to use is `gpg --verify hashes.txt`, if you're typing this out yourself, remember that you can use `TAB` to autocomplete.
+The next command we're going to use is `gpg --verify hashes.txt`, if you're typing this out yourself, remember that you can use 'TAB' to autocomplete.
 
 If everything has gone to plan, we should see a message stating 'Good signature from "binaryFate <binaryfate@getmonero.org>"'.
 
@@ -139,20 +134,40 @@ GREAT!
 
 Now we can compare the hashes in the text file to those of the file we downloaded.
 
-If you're using linux you can use the command `sha256sum --check hashes.txt`, we're going to look for the version we downloaded and check to see if everything is 'OK'.
+If you're using linux you can use the command `sha256sum --check hashes.txt`, we're going to look for the version we downloaded and check to see if everything is "OK".
 
 If you're using windows, please use the command `Get-Filehash` and then the name of the file you downloaded. Manually compare this hash to the one in the hashes.txt file.
 
 Now we know, the software that we have is the one intended by the person who signed these hashes!
 
-.....................................................
+
+### SIGNING AND DYCRYPTING MESSAGES
+
+GPG has a lot of interesting functions which include the ability to sign, encrypt and decrypt messages.
+
+We at Monero Guides host our [public key](https://github.com/moneroguides/moneroguides-assets/blob/main/monero-guides.asc) on github which you can use it to verify the contact details on our websites [about page](https://moneroguides.org/about/) and our scripts.
+
+To do this, import the monero-guides public key into your keyring and then save the signed message into a text file. I'm going to create a new text file called "message.txt". If everything is done correctly it can verifed using the previous steps.
+
+You can sign your own "clear text" messages too using the command `gpg --user * --clearsign message.txt`. The * (wildcard) should be replaced by the name given to the private key you wish to use. If like us you create multiple key pairs remember, if you're ever unsure of your user name you can use the command `gpg --list-keys`.
+
+As just mentioned it is also possible to encrypt and decrypt messages. The most convenient way to share these messages is using the ACSII armor function. The following command allows someone who has the monero-guides public key to decrypt any open message from us `gpg --user monero-guides --sign --armor message.txt`. 
+
+Once the command is finished running you should have a new file in the working directory. It should have the same format as your original file with the suffix ".acs".
+
+Another great feature of gpg is the ability to encrypt messages which can only be decrypted by specific people. To do this, you need the public key of the recipient. In the next example we're going to encrypt a message that can be decrypted by only us at monero-guides decrytp `gpg --user monero-guides --recpient monero-guides --sign --armor message.txt`.
+
+It's pretty simple to decrypt these messages. All we need to do is use the command `gpg --decrypt message.txt.acs`.
+
+Watch out for an easter egg coming up in the following few videos. There will be a nice reward for a lucky viewer who's been paying attention.
+
 
 ### OUTRO
 
 PGP relies heavily on trust, it's for that reason you should be sure that the public key you have in your keyring is in fact trustworthy.
 
-If you’re not, then you may as well skip this step and accept the consequences. That being said, checking the piece of software you download by verifying them against signed hashes is best practice.
+If you’re not, then you may as well skip this step and accept the consequences. That being said, checking the software you download is best practice.
 
-The instructions in this video will be relevant to a lot of our other videos so please make yourself familiar.
+The instructions in this video will be relevant to a lot of our other videos so please make yourself familiar with GPG.
 
 Anyway, that's it for this installment, peace be with you privacy fans.
