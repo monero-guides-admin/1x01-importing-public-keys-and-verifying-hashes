@@ -60,7 +60,7 @@ What we have done simultaneously is added our keys to our very own keyring.
 key rings are a little outside the scope of this video, however it's important to know that they may be different and you can have as many as you like. as we won't be specifying, we're going to be working with a default keyring
 
 
-### VERIFYING & IMPORTING SOMEONE ELSE'S PUBLIC KEY
+### VERIFYING & IMPORTING PUBLIC KEYS
 
 To demonstrate we're going to head over to the official [github repository](https://github.com/monero-project/monero) for monero.
 
