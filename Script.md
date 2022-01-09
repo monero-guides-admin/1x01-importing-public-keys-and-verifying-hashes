@@ -106,7 +106,7 @@ Once again we can use `gpg --list-keys` to verify that it has been added to our 
 
 ### SIGNING SOMEONE ELSE'S PUBLIC KEY
 
-This step is a little unnecessary and is more relevant to public keyrings and the pgp ecosystem as a whole, namely the 'web of trust', which is totally outside the scope of this video, but you can learn more about the web of trust through the p2p foundation - [web of trust](https://wiki.p2pfoundation.net/Web_of_Trust).
+This step is a little unnecessary and is more relevant to public keyrings and the pgp ecosystem as a whole, namely the 'web of trust', which is totally outside the scope of this video, but you can learn more about the [web of trust](https://wiki.p2pfoundation.net/Web_of_Trust) through the p2p foundation.
 For us, going through this step means that you have a more simple log when you verify signatures in the future.
 
 It is possible to add this level of trust to the signature you have imported with the `--edit-key` flag. 
