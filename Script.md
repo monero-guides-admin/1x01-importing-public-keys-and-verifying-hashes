@@ -149,7 +149,7 @@ We at Monero Guides host our [public key](https://github.com/moneroguides/monero
 
 To do this, import the monero-guides public key into your keyring and then save the signed message into a text file. I'm going to create a new text file called "message.txt". If everything is done correctly it can verifed using the previous steps.
 
-You can sign your own "clear text" messages too using the command `gpg --user * --clearsign message.txt`. The * (wildcard) should be replaced by the name given to the private key you wish to use. If like us you create multiple key pairs remember, if you're ever unsure of your user name you can use the command `gpg --list-keys`.
+You can sign your own "clear text" messages too using the command `gpg --user * --clearsign message.txt`. The * (wildcard) should be replaced by the name given to the private key you wish to use. If you create multiple key pairs and you're unsure of your user name, you can use the command `gpg --list-keys` as we have done previously.
 
 As just mentioned it is also possible to encrypt and decrypt messages. The most convenient way to share these messages is using the ACSII armor function. The following command allows someone who has the monero-guides public key to decrypt any open message from us `gpg --user monero-guides --sign --armor message.txt`. 
 
