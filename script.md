@@ -3,6 +3,7 @@
 * gpg2 (Linux)
 * Kelopata (Windows) - [GPG4WIN](https://www.gpg4win.org)
 
+.....................................................
 
 ### INTRO
 
